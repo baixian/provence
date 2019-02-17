@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[微信小程序]]></title>
-    <url>%2Fcategory%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%2F</url>
     <content type="text"></content>
       <categories>
         <category>小程序</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[TinyPNG---一个压缩图片的神站，前端必备]]></title>
-    <url>%2Fcategory%2Fhtml%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhtml%2F</url>
     <content type="text"><![CDATA[如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量：1.打开网址：http://tinypng.org2.选择你要压缩的PNG或者JPG图片或者直接将你要压缩的图片拖拽到网页中间的大框框内。3.压缩完成，点击download下载即可。图片的压缩比例还是非常大的，而且也不会看出与压缩前有多少区别 前端攻城师和设计师们再也不用担心图片太大加载过慢的问题了~]]></content>
       <categories>
         <category>html</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[css几个超实用美化页面细节方法]]></title>
-    <url>%2Fcategory%2Fcss%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss%2F</url>
     <content type="text"><![CDATA[使用CSS3 ::selection伪元素改变文本选中颜色设置整个页面文本选中的基本样式123456789101112::selection &#123; background:#32acb4; color:#fff;&#125;::-moz-selection &#123; background:#32acb4; color:#fff;&#125;::-webkit-selection &#123; background:#32acb4; color:#fff;&#125; 使用CSS选择器修改指定标签内容文字选中后的样式状态12345678910111213&lt;p class="maroon"&gt;...文字内容。&lt;/p&gt;.maroon::selection &#123; background:maroon; color:#fff;&#125;.maroon::-moz-selection &#123; background:maroon; color:#fff;&#125;.maroon::-webkit-selection &#123; background:maroon; color:#fff;&#125; 使用CSS3修改浏览器滚动条样式12345678910111213::-webkit-scrollbar &#123; width: 9px; height: 9px; &#125;::-webkit-scrollbar-track-piece &#123; background-color: transparent; &#125;body::-webkit-scrollbar-track-piece &#123; background-color: rgba(0,0,0,.2); &#125;::-webkit-scrollbar-track-piece:no-button &#123;&#125;::-webkit-scrollbar-thumb &#123; background-color: rgba(0,0,0,.6); border-radius: 3px; &#125;::-webkit-scrollbar-thumb:hover &#123; background-color:#454545; &#125;::-webkit-scrollbar-thumb:active &#123; background-color: #323232; &#125;::-webkit-scrollbar-button:vertical &#123; width: 9px; &#125;::-webkit-scrollbar-button:horizontal &#123; width: 9px; &#125;::-webkit-scrollbar-button:vertical:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:vertical:end:increment &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:end:increment &#123; background-color: #cccccc; &#125;]]></content>
       <categories>
         <category>css</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[node]]></title>
-    <url>%2Fcategory%2Fnode%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fnode%2F</url>
     <content type="text"></content>
       <categories>
         <category>node</category>
@@ -46,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[vue]]></title>
-    <url>%2Fcategory%2Fvue%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fvue%2F</url>
     <content type="text"></content>
       <categories>
         <category>vue</category>
@@ -57,7 +57,7 @@
   </entry>
   <entry>
     <title><![CDATA[js]]></title>
-    <url>%2Fcategory%2Fjs%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fjs%2F</url>
     <content type="text"></content>
       <categories>
         <category>js</category>
@@ -68,7 +68,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo建站第一天]]></title>
-    <url>%2Fcategory%2Fhexo%E5%BB%BA%E7%AB%99%E7%AC%AC%E4%B8%80%E5%A4%A9%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhexo%E5%BB%BA%E7%AB%99%E7%AC%AC%E4%B8%80%E5%A4%A9%2F</url>
     <content type="text"><![CDATA[玩github有几个月了，顺手想搭建一个博客，然后看了Jekyll和hexo ，最终选择了hexo搭建这个博客然后就是翻阅各种资料，期间也有些问题，但最终都逐步解决了 话不多说1.进入官网 https://hexo.io/zh-cn/docs/2.按照官网走下去，应该没有多大问题3.然后就是选择一个主题了 https://hexo.io/themes/ 我在这里选择的是next主题4.next主题个性化配置 网上一搜一大把 不想搜的话可以看这篇 https://www.jianshu.com/p/f054333ac9e65.然后就是部署放到github上面]]></content>
       <categories>
         <category>杂谈</category>

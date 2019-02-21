@@ -6,7 +6,7 @@
   <link href="/provence.github.io/atom.xml" rel="self"/>
   
   <link href="https://baixian.github.io/provence.github.io/"/>
-  <updated>2019-02-20T06:54:59.357Z</updated>
+  <updated>2019-02-20T12:15:19.724Z</updated>
   <id>https://baixian.github.io/provence.github.io/</id>
   
   <author>
@@ -17,19 +17,119 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>微信小程序</title>
-    <link href="https://baixian.github.io/provence.github.io/category/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <id>https://baixian.github.io/provence.github.io/category/微信小程序/</id>
-    <published>2018-03-17T05:36:31.000Z</published>
-    <updated>2019-02-20T06:54:59.357Z</updated>
+    <title>javascript常用的正则表达式</title>
+    <link href="https://baixian.github.io/provence.github.io/category/javascript%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://baixian.github.io/provence.github.io/category/javascript常用的正则表达式/</id>
+    <published>2018-05-15T12:00:27.000Z</published>
+    <updated>2019-02-20T12:15:19.724Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><h3 id="微信小程序学习"><a href="#微信小程序学习" class="headerlink" title="微信小程序学习"></a>微信小程序学习</h3><p>1.因为公司要开发小程序，也没接触过，感谢公司给学习的时间，特此来记录一下 学习微信小程序的坑</p><p>2.从注册微信小程序账户到安装微信开发者工具，官方文档给的确实算很详细了，就想大神们都说的，中国好多的官方文档可以就算是傻瓜式的了，就差帮你安装了。这一块的话我也是按着官网的提示一步步走的，就放一个官方的地址。<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/wxadoc/dev/</a></p><p>3.下载安装好微信开发者工具后，新建项目，会生成一个默认的文件夹。如下图所示：</p><p><img src="https://ws3.sinaimg.cn/large/005BYqpggy1g0cvz6ageyj313s0qbq4t.jpg" alt="图一"></p><p>默认的已经为我们建立了helloWorld页面，pages对应的是每一个单独的页面，utile放的是一些工具类的文件，app.js放置一些默认的js代码，再往后的开发中可以将一些常用的js功能封装起来放在app.js方便调用。app.json放的是这个微信小程序的配置。app.wxss则是整体的初始化样式。<br>以index文件夹为例，其中的index.wxml，index.wxss，index.js相当于html文件的html、css、js。微信进行了封装，每个文件夹下的文件只对当前页面有作用。整体来说微信小程序的开发类似于html的开发，具备基本的html，css知识就可以进行样式布局的开发。<br>类似于的标签在官方文档里都有详细的介绍，可以一边参考文档一边自己写，能更加快的学会各种标签的使用方法。</p><p>这里放一个比较简单的首页轮播的小案例，也是这两天自己在学的时候做的，比较粗糙，但大概就是这样一个标签的使用方法：</p><h5 id="wxml文件"><a href="#wxml文件" class="headerlink" title="wxml文件"></a>wxml文件</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">swiper</span> <span class="attr">class</span>=<span class="string">"swiper"</span> <span class="attr">indicator-dots</span>=<span class="string">"&#123;&#123;indicatorDots&#125;&#125;"</span> <span class="attr">autoplay</span>=<span class="string">"&#123;&#123;autoplay&#125;&#125;"</span> <span class="attr">interval</span>=<span class="string">"&#123;&#123;interval&#125;&#125;"</span> <span class="attr">duration</span>=<span class="string">"&#123;&#123;duration&#125;&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;imgUrls&#125;&#125;"</span> <span class="attr">wx:for-index</span>=<span class="string">"index"</span> <span class="attr">wx:key</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item.image&#125;&#125;"</span> <span class="attr">mode</span>=<span class="string">"aspectFill"</span>  /&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure><h5 id="wxss文件"><a href="#wxss文件" class="headerlink" title="wxss文件"></a>wxss文件</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.slide</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">380</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.slide</span> <span class="selector-class">.swiper</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">380</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.slide</span> <span class="selector-class">.swiper</span> <span class="selector-tag">image</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">380</span>rpx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="js文件"><a href="#js文件" class="headerlink" title="js文件"></a>js文件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">imgUrls: [</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner.png"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner2.png"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner.png"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner2.png"</span> &#125;</span><br><span class="line">],<span class="comment">//图片链接地址</span></span><br><span class="line">indicatorDots: <span class="literal">true</span>,  <span class="comment">//是否显示焦点</span></span><br><span class="line">autoplay: <span class="literal">true</span>,  <span class="comment">//是否自动播放</span></span><br><span class="line">interval: <span class="number">2000</span>,  <span class="comment">//自动播放时间间隔</span></span><br><span class="line">duration: <span class="number">500</span>  <span class="comment">//滑动时间</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p><img src="https://ws3.sinaimg.cn/large/005BYqpggy1g0cw7fe27rj30ag05iq5f.jpg" alt="如图"></p><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><h3 id="项目中经常用到的正则表达式"><a href="#项目中经常用到的正则表达式" class="headerlink" title="项目中经常用到的正则表达式"></a>项目中经常用到的正则表达式</h3><p>在项目中经常会用到JS的正则去验证用户输入的是否规范</p><h5 id="通常验证规则代码为"><a href="#通常验证规则代码为" class="headerlink" title="通常验证规则代码为"></a>通常验证规则代码为</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> phonereg = <span class="regexp">/^1[3|4|5|7|8][0-9]&#123;9&#125;$/</span>; <span class="comment">//手机正则</span></span><br><span class="line"><span class="keyword">var</span> vifphone = <span class="number">15035231452</span></span><br><span class="line">alert(phonereg.test(<span class="keyword">this</span>.vifphone)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure><h5 id="邮箱验证正则"><a href="#邮箱验证正则" class="headerlink" title="邮箱验证正则"></a>邮箱验证正则</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^(\w)+(.\w+)*@(\w)+((.\w&#123;<span class="number">2</span>,<span class="number">3</span>&#125;)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;)$/</span><br></pre></td></tr></table></figure><h5 id="手机验证正则"><a href="#手机验证正则" class="headerlink" title="手机验证正则"></a>手机验证正则</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^<span class="number">1</span>[<span class="number">3</span>|<span class="number">4</span>|<span class="number">5</span>|<span class="number">7</span>|<span class="number">8</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">9</span>&#125;$/</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;h3 id=&quot;微信小程序学习&quot;&gt;&lt;a href=&quot;#微信小程序学习&quot; class=&quot;headerlink&quot; title=&quot;微信小程序学习&quot;&gt;&lt;/a&gt;微信小
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;项目中经常用到的正则表达式&quot;&gt;&lt;a href=&quot;#项目中经常用到的正则表达式&quot; class=&quot;headerlink&quot; title=&quot;项
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://baixian.github.io/provence.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="js" scheme="https://baixian.github.io/provence.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css几个超实用美化页面细节方法</title>
+    <link href="https://baixian.github.io/provence.github.io/category/css/"/>
+    <id>https://baixian.github.io/provence.github.io/category/css/</id>
+    <published>2018-05-14T11:45:27.000Z</published>
+    <updated>2019-02-20T12:16:52.250Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><h2 id="使用CSS3-selection伪元素改变文本选中颜色"><a href="#使用CSS3-selection伪元素改变文本选中颜色" class="headerlink" title="使用CSS3 ::selection伪元素改变文本选中颜色"></a>使用CSS3 ::selection伪元素改变文本选中颜色</h2><h3 id="设置整个页面文本选中的基本样式"><a href="#设置整个页面文本选中的基本样式" class="headerlink" title="设置整个页面文本选中的基本样式"></a>设置整个页面文本选中的基本样式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">::selection &#123;</span><br><span class="line">    background:<span class="comment">#32acb4;</span></span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">::-moz-selection &#123;</span><br><span class="line">    background:<span class="comment">#32acb4;</span></span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">::-webkit-selection &#123;</span><br><span class="line">    background:<span class="comment">#32acb4;</span></span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="使用CSS选择器修改指定标签内容文字选中后的样式状态"><a href="#使用CSS选择器修改指定标签内容文字选中后的样式状态" class="headerlink" title="使用CSS选择器修改指定标签内容文字选中后的样式状态"></a>使用CSS选择器修改指定标签内容文字选中后的样式状态</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class="maroon"&gt;...文字内容。&lt;/p&gt;</span><br><span class="line">.maroon::selection &#123;</span><br><span class="line">    background:maroon;</span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">.maroon::-moz-selection &#123;</span><br><span class="line">    background:maroon;</span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">.maroon::-webkit-selection &#123;</span><br><span class="line">    background:maroon;</span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="使用CSS3修改浏览器滚动条样式"><a href="#使用CSS3修改浏览器滚动条样式" class="headerlink" title="使用CSS3修改浏览器滚动条样式"></a>使用CSS3修改浏览器滚动条样式</h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">::-webkit-scrollbar &#123; width:</span> 9px; height: 9px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-track-piece &#123; background-color:</span> transparent; &#125;</span><br><span class="line">body::-webkit-scrollbar-track-piece &#123; background-color: rgba(0,0,0,.2); &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-track-piece:no-button</span> &#123;&#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-thumb &#123; background-color:</span> rgba(0,0,0,.6); border-radius: 3px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-thumb:hover</span> &#123; background-color:#454545; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-thumb:active</span> &#123; background-color: #323232; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:vertical</span> &#123; width: 9px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:horizontal</span> &#123; width: 9px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:vertical:start:decrement</span> &#123; background-color: #cccccc; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:vertical:end:increment</span> &#123; background-color: #cccccc; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:horizontal:start:decrement</span> &#123; background-color:  #cccccc; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:horizontal:end:increment</span> &#123; background-color:  #cccccc; &#125;</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;使用CSS3-selection伪元素改变文本选中颜色&quot;&gt;&lt;a href=&quot;#使用CSS3-selection伪元素改变文本选中颜色&quot;
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://baixian.github.io/provence.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="css" scheme="https://baixian.github.io/provence.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webstrom快捷键</title>
+    <link href="https://baixian.github.io/provence.github.io/category/Webstrom%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://baixian.github.io/provence.github.io/category/Webstrom快捷键/</id>
+    <published>2018-04-21T11:39:59.000Z</published>
+    <updated>2019-02-21T12:57:19.171Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><p>由于特别喜欢Webstrom这款编辑器，虽然运行起来有点沉重，没有Sublime那么轻巧，但是萝卜白菜各有所爱。<br>下面就总结一下Webstrom的快捷键</p><ol><li><p>ctrl + shift + n: 打开工程中的文件，目的是打开当前工程下任意目录的文件。</p></li><li><p>ctrl + j: 输出模板</p></li><li><p>ctrl + b: 跳到变量申明处</p></li><li><p>ctrl + alt + T: 围绕包裹代码(包括zencoding的Wrap with Abbreviation)</p></li><li><p>ctrl + []: 匹配 {}[]</p></li><li><p>ctrl + F12: 可以显示当前文件的结构</p></li><li><p>ctrl + x: 剪切(删除)行，不选中，直接剪切整个行，如果选中部分内容则剪切选中的内容</p></li><li><p>alt + left/right:标签切换</p></li><li><p>ctrl + r: 替换</p></li><li><p>ctrl + shift + up: 行移动</p></li><li><p>shift + alt + up: 块移动(if(){},while(){}语句块的移动)</p></li><li><p>ctrl + d: 行复制</p></li><li><p>ctrl + shift + ]/[: 选中块代码</p></li><li><p>ctrl + / : 单行注释</p></li><li><p>ctrl + shift + / : 块注释</p></li><li><p>ctrl + shift + i : 显示当前CSS选择器或者JS函数的详细信息</p></li><li><p>ctrl + ‘-/+’: 可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠。</p></li><li><p>ctrl + ‘.’: 折叠选中的代码的代码。</p></li><li><p>shift + esc: 当前激活的任意小窗口最小化，也可以是alt+数字键，数字在小窗口有显示。</p></li><li><p>alt + ‘7’: 显示当前的函数结构。</p></li><li><p>如果是*.html页面，则在文件名下的导航栏某DOM结构上右键，可以全选当前DOM结构。</p></li></ol><h4 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h4><h6 id="查找-代替"><a href="#查找-代替" class="headerlink" title="查找/代替"></a>查找/代替</h6><table><thead><tr><th style="text-align:left">快捷键</th><th>说明</th></tr></thead><tbody><tr><td style="text-align:left"><strong>ctrl+shift+N</strong></td><td>通过文件名快速查找工程内的文件（必记）</td></tr><tr><td style="text-align:left"><strong>ctrl+shift+alt+N</strong></td><td>通过一个字符快速查找位置（必记）</td></tr><tr><td style="text-align:left"><strong>ctrl+F</strong></td><td>在文件内快速查找代码</td></tr><tr><td style="text-align:left"><strong>F3</strong></td><td>查找下一个</td></tr><tr><td style="text-align:left"><strong>shift+F3</strong></td><td>查找上一个</td></tr><tr><td style="text-align:left"><strong>ctrl+R</strong></td><td>文件内代码替换</td></tr><tr><td style="text-align:left"><strong>ctrl+shift+R</strong></td><td>指定目录内代码批量替换</td></tr><tr><td style="text-align:left"><strong>ctrl+shift+F</strong></td><td>指定目录内代码批量查找</td></tr></tbody></table><hr><p>先这样吧到时候在整理</p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;由于特别喜欢Webstrom这款编辑器，虽然运行起来有点沉重，没有Sublime那么轻巧，但是萝卜白菜各有所爱。&lt;br&gt;下面就总结一下Webst
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://baixian.github.io/provence.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="实用" scheme="https://baixian.github.io/provence.github.io/tags/%E5%AE%9E%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git的一些操作</title>
+    <link href="https://baixian.github.io/provence.github.io/category/git%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"/>
+    <id>https://baixian.github.io/provence.github.io/category/git的一些操作/</id>
+    <published>2018-04-19T07:15:46.000Z</published>
+    <updated>2019-02-21T12:11:30.861Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><p>廖雪峰git教程 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br>Pro Git（中文版）<a href="https://gitee.com/progit/index.html" target="_blank" rel="noopener">https://gitee.com/progit/index.html</a></p><h3 id="一些git的常用操作"><a href="#一些git的常用操作" class="headerlink" title="一些git的常用操作"></a>一些git的常用操作</h3><p>1.修改git所有commit记录中用户的name和email</p><h5 id="修改本地全局提交用户信息"><a href="#修改本地全局提交用户信息" class="headerlink" title="修改本地全局提交用户信息"></a>修改本地全局提交用户信息</h5><ul><li><p>修改提交用户邮箱</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure></li><li><p>修改提交用户名</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br></pre></td></tr></table></figure></li></ul><p>修改完成以后，后面再提交的时候就是用的这个设置好的用户信息了，不过之前的提交记录并不会被修改。</p><h5 id="修改仓库历史提交用户信息"><a href="#修改仓库历史提交用户信息" class="headerlink" title="修改仓库历史提交用户信息"></a>修改仓库历史提交用户信息</h5><ul><li>clone一个新的项目文件<br>1.git clone –bare <a href="https://github.com/user/projectName.git" target="_blank" rel="noopener">https://github.com/user/projectName.git</a> 克隆完成以后cd projectName 进入项目<br>2.在命令行中运行批量修改脚本<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">    git filter-branch --env-filter <span class="string">'</span></span><br><span class="line"><span class="string">    OLD_EMAIL="your-old-email@example.com"</span></span><br><span class="line"><span class="string">    CORRECT_NAME="Your Correct Name"</span></span><br><span class="line"><span class="string">    CORRECT_EMAIL="your-correct-email@example.com"</span></span><br><span class="line"><span class="string">    if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]</span></span><br><span class="line"><span class="string">    then</span></span><br><span class="line"><span class="string">        export GIT_COMMITTER_NAME="$CORRECT_NAME"</span></span><br><span class="line"><span class="string">        export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"</span></span><br><span class="line"><span class="string">    fi</span></span><br><span class="line"><span class="string">    if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]</span></span><br><span class="line"><span class="string">    then</span></span><br><span class="line"><span class="string">        export GIT_AUTHOR_NAME="$CORRECT_NAME"</span></span><br><span class="line"><span class="string">        export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"</span></span><br><span class="line"><span class="string">    fi</span></span><br><span class="line"><span class="string">    '</span> --tag-name-filter cat -- --branches --tags</span><br></pre></td></tr></table></figure></li></ul><p>3.将上面脚本中的OLD_EMAIL替换为你的旧的提交邮箱，CORRECT_NAME和CORRECT_EMAIL修改为新的用户名和邮箱地址。<br>4.修改完成后复制脚本到命令行中直接按回车Enter键即可批量替换提交信息。<br>5.脚本执行完成后执行git命令git push –force –tags origin ‘refs/heads/*’ 将信息提交到远程仓库即可</p><h5 id="具体可见官方提供的GitHub-Help"><a href="#具体可见官方提供的GitHub-Help" class="headerlink" title="具体可见官方提供的GitHub Help"></a>具体可见官方提供的GitHub Help</h5><h4 id="最后送大家一个git命令行大全图片"><a href="#最后送大家一个git命令行大全图片" class="headerlink" title="最后送大家一个git命令行大全图片"></a>最后送大家一个git命令行大全图片</h4><p><img src="http://ww1.sinaimg.cn/large/0063oP9Wly1g0eb08lxmnj30r10hsmzi.jpg" alt="例"></p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;廖雪峰git教程 &lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0013739516305929606dd
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://baixian.github.io/provence.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="https://baixian.github.io/provence.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序</title>
+    <link href="https://baixian.github.io/provence.github.io/category/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>https://baixian.github.io/provence.github.io/category/微信小程序/</id>
+    <published>2018-03-17T05:36:31.000Z</published>
+    <updated>2019-02-20T13:13:46.499Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><h3 id="微信小程序学习"><a href="#微信小程序学习" class="headerlink" title="微信小程序学习"></a>微信小程序学习</h3><p>1.因为公司要开发小程序，也没接触过，感谢公司给学习的时间，特此来记录一下 学习微信小程序的坑</p><p>2.从注册微信小程序账户到安装微信开发者工具，官方文档给的确实算很详细了，就像大神们都说的，中国好多的官方文档可以就算是傻瓜式的了，就差帮你安装了。这一块的话我也是按着官网的提示一步步走的，就放一个官方的地址。<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/wxadoc/dev/</a></p><p>3.下载安装好微信开发者工具后，新建项目，会生成一个默认的文件夹。如下图所示：</p><p><img src="https://ws3.sinaimg.cn/large/005BYqpggy1g0cvz6ageyj313s0qbq4t.jpg" alt="图一"></p><p>默认的已经为我们建立了helloWorld页面，pages对应的是每一个单独的页面，utile放的是一些工具类的文件，app.js放置一些默认的js代码，再往后的开发中可以将一些常用的js功能封装起来放在app.js方便调用。app.json放的是这个微信小程序的配置。app.wxss则是整体的初始化样式。<br>以index文件夹为例，其中的index.wxml，index.wxss，index.js相当于html文件的html、css、js。微信进行了封装，每个文件夹下的文件只对当前页面有作用。整体来说微信小程序的开发类似于html的开发，具备基本的html，css知识就可以进行样式布局的开发。<br>类似于的标签在官方文档里都有详细的介绍，可以一边参考文档一边自己写，能更加快的学会各种标签的使用方法。</p><p>这里放一个比较简单的首页轮播的小案例，也是这两天自己在学的时候做的，比较粗糙，但大概就是这样一个标签的使用方法：</p><h5 id="wxml文件"><a href="#wxml文件" class="headerlink" title="wxml文件"></a>wxml文件</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">swiper</span> <span class="attr">class</span>=<span class="string">"swiper"</span> <span class="attr">indicator-dots</span>=<span class="string">"&#123;&#123;indicatorDots&#125;&#125;"</span> <span class="attr">autoplay</span>=<span class="string">"&#123;&#123;autoplay&#125;&#125;"</span> <span class="attr">interval</span>=<span class="string">"&#123;&#123;interval&#125;&#125;"</span> <span class="attr">duration</span>=<span class="string">"&#123;&#123;duration&#125;&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;imgUrls&#125;&#125;"</span> <span class="attr">wx:for-index</span>=<span class="string">"index"</span> <span class="attr">wx:key</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item.image&#125;&#125;"</span> <span class="attr">mode</span>=<span class="string">"aspectFill"</span>  /&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure><h5 id="wxss文件"><a href="#wxss文件" class="headerlink" title="wxss文件"></a>wxss文件</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.slide</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">380</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.slide</span> <span class="selector-class">.swiper</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">380</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.slide</span> <span class="selector-class">.swiper</span> <span class="selector-tag">image</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">380</span>rpx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="js文件"><a href="#js文件" class="headerlink" title="js文件"></a>js文件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">imgUrls: [</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner.png"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner2.png"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner.png"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"image"</span>: <span class="string">"../../image/banner2.png"</span> &#125;</span><br><span class="line">],<span class="comment">//图片链接地址</span></span><br><span class="line">indicatorDots: <span class="literal">true</span>,  <span class="comment">//是否显示焦点</span></span><br><span class="line">autoplay: <span class="literal">true</span>,  <span class="comment">//是否自动播放</span></span><br><span class="line">interval: <span class="number">2000</span>,  <span class="comment">//自动播放时间间隔</span></span><br><span class="line">duration: <span class="number">500</span>  <span class="comment">//滑动时间</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p><img src="https://ws3.sinaimg.cn/large/005BYqpggy1g0cw7fe27rj30ag05iq5f.jpg" alt="如图"></p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;微信小程序学习&quot;&gt;&lt;a href=&quot;#微信小程序学习&quot; class=&quot;headerlink&quot; title=&quot;微信小程序学习&quot;&gt;&lt;/a&gt;
       
     
     </summary>
@@ -48,13 +148,13 @@
     <published>2018-01-13T07:37:12.000Z</published>
     <updated>2019-02-19T11:50:20.242Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><h2 id="如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。"><a href="#如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。" class="headerlink" title="如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。"></a>如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。</h2><h3 id="只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量："><a href="#只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量：" class="headerlink" title="只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量："></a>只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量：</h3><p>1.打开网址：<a href="http://tinypng.org" target="_blank" rel="noopener">http://tinypng.org</a><br>2.选择你要压缩的PNG或者JPG图片或者直接将你要压缩的图片拖拽到网页中间的大框框内。<br>3.压缩完成，点击download下载即可。<br>图片的压缩比例还是非常大的，而且也不会看出与压缩前有多少区别 前端攻城师和设计师们再也不用担心图片太大加载过慢的问题了~</p><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><h2 id="如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。"><a href="#如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。" class="headerlink" title="如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。"></a>如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。</h2><h3 id="只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量："><a href="#只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量：" class="headerlink" title="只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量："></a>只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量：</h3><p>1.打开网址：<a href="http://tinypng.org" target="_blank" rel="noopener">http://tinypng.org</a><br>2.选择你要压缩的PNG或者JPG图片或者直接将你要压缩的图片拖拽到网页中间的大框框内。<br>3.压缩完成，点击download下载即可。<br>图片的压缩比例还是非常大的，而且也不会看出与压缩前有多少区别 前端攻城师和设计师们再也不用担心图片太大加载过慢的问题了~</p><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;h2 id=&quot;如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。&quot;&gt;&lt;a href=&quot;#
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。&quot;&gt;&lt;a href
       
     
     </summary>
@@ -67,19 +167,44 @@
   </entry>
   
   <entry>
-    <title>css几个超实用美化页面细节方法</title>
-    <link href="https://baixian.github.io/provence.github.io/category/css/"/>
-    <id>https://baixian.github.io/provence.github.io/category/css/</id>
+    <title>css3制作鼠标移入的过渡动画效果</title>
+    <link href="https://baixian.github.io/provence.github.io/category/css3%E5%88%B6%E4%BD%9C%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E7%9A%84%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/"/>
+    <id>https://baixian.github.io/provence.github.io/category/css3制作鼠标移入的过渡动画效果/</id>
     <published>2018-01-06T11:15:46.000Z</published>
-    <updated>2019-02-19T11:50:09.163Z</updated>
+    <updated>2019-02-20T12:18:24.344Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><h2 id="使用CSS3-selection伪元素改变文本选中颜色"><a href="#使用CSS3-selection伪元素改变文本选中颜色" class="headerlink" title="使用CSS3 ::selection伪元素改变文本选中颜色"></a>使用CSS3 ::selection伪元素改变文本选中颜色</h2><h3 id="设置整个页面文本选中的基本样式"><a href="#设置整个页面文本选中的基本样式" class="headerlink" title="设置整个页面文本选中的基本样式"></a>设置整个页面文本选中的基本样式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">::selection &#123;</span><br><span class="line">    background:<span class="comment">#32acb4;</span></span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">::-moz-selection &#123;</span><br><span class="line">    background:<span class="comment">#32acb4;</span></span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">::-webkit-selection &#123;</span><br><span class="line">    background:<span class="comment">#32acb4;</span></span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="使用CSS选择器修改指定标签内容文字选中后的样式状态"><a href="#使用CSS选择器修改指定标签内容文字选中后的样式状态" class="headerlink" title="使用CSS选择器修改指定标签内容文字选中后的样式状态"></a>使用CSS选择器修改指定标签内容文字选中后的样式状态</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class="maroon"&gt;...文字内容。&lt;/p&gt;</span><br><span class="line">.maroon::selection &#123;</span><br><span class="line">    background:maroon;</span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">.maroon::-moz-selection &#123;</span><br><span class="line">    background:maroon;</span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br><span class="line">.maroon::-webkit-selection &#123;</span><br><span class="line">    background:maroon;</span><br><span class="line">    color:<span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="使用CSS3修改浏览器滚动条样式"><a href="#使用CSS3修改浏览器滚动条样式" class="headerlink" title="使用CSS3修改浏览器滚动条样式"></a>使用CSS3修改浏览器滚动条样式</h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">::-webkit-scrollbar &#123; width:</span> 9px; height: 9px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-track-piece &#123; background-color:</span> transparent; &#125;</span><br><span class="line">body::-webkit-scrollbar-track-piece &#123; background-color: rgba(0,0,0,.2); &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-track-piece:no-button</span> &#123;&#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-thumb &#123; background-color:</span> rgba(0,0,0,.6); border-radius: 3px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-thumb:hover</span> &#123; background-color:#454545; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-thumb:active</span> &#123; background-color: #323232; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:vertical</span> &#123; width: 9px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:horizontal</span> &#123; width: 9px; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:vertical:start:decrement</span> &#123; background-color: #cccccc; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:vertical:end:increment</span> &#123; background-color: #cccccc; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:horizontal:start:decrement</span> &#123; background-color:  #cccccc; &#125;</span><br><span class="line"><span class="meta">::-webkit-scrollbar-button:horizontal:end:increment</span> &#123; background-color:  #cccccc; &#125;</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><h4 id="在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题"><a href="#在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题" class="headerlink" title="在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题"></a>在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题</h4><p>代码如下</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.inbtnclick</span>&#123;<span class="attribute">opacity</span>:<span class="number">0</span>&#125;</span><br><span class="line"><span class="selector-class">.inbtnclick</span><span class="selector-pseudo">:hover</span>&#123; <span class="attribute">opacity</span>: <span class="number">1</span>;<span class="attribute">-moz-transition</span>: all <span class="number">0.3s</span> ease-in-out;<span class="attribute">-o-transition</span>: all <span class="number">0.3s</span> ease-in-out; <span class="attribute">-webkit-transition</span>: all <span class="number">0.3s</span> ease-in-out; <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease-in-out; &#125;</span><br></pre></td></tr></table></figure><h6 id="在很多hover的地方，只需要在上个元素上写好hover之前的样式，然后再hover中写入要改变的样式，然后加入这一段代码即可完成。"><a href="#在很多hover的地方，只需要在上个元素上写好hover之前的样式，然后再hover中写入要改变的样式，然后加入这一段代码即可完成。" class="headerlink" title="在很多hover的地方，只需要在上个元素上写好hover之前的样式，然后再hover中写入要改变的样式，然后加入这一段代码即可完成。"></a>在很多hover的地方，只需要在上个元素上写好hover之前的样式，然后再hover中写入要改变的样式，然后加入这一段代码即可完成。</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-moz-transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.3s</span> <span class="selector-tag">ease-in-out</span>;<span class="selector-tag">-o-transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.3s</span> <span class="selector-tag">ease-in-out</span>; <span class="selector-tag">-webkit-transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.3s</span> <span class="selector-tag">ease-in-out</span>; <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.3s</span> <span class="selector-tag">ease-in-out</span>;</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;h2 id=&quot;使用CSS3-selection伪元素改变文本选中颜色&quot;&gt;&lt;a href=&quot;#使用CSS3-selection伪元素改变文本选中颜色&quot; cl
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;h4 id=&quot;在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://baixian.github.io/provence.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="css" scheme="https://baixian.github.io/provence.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css单行文本，多行文本溢出显示省略号</title>
+    <link href="https://baixian.github.io/provence.github.io/category/css%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%EF%BC%8C%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/"/>
+    <id>https://baixian.github.io/provence.github.io/category/css单行文本，多行文本溢出显示省略号/</id>
+    <published>2018-01-04T06:15:46.000Z</published>
+    <updated>2019-02-21T12:35:46.572Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><h4 id="单行文本溢出"><a href="#单行文本溢出" class="headerlink" title="单行文本溢出"></a>单行文本溢出</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;  </span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;  </span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure><h4 id="多行文本溢出"><a href="#多行文本溢出" class="headerlink" title="多行文本溢出"></a>多行文本溢出</h4><p>只适用用webkit内核浏览器<br></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;   </span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;   </span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 3;   </span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure><p></p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;h4 id=&quot;单行文本溢出&quot;&gt;&lt;a href=&quot;#单行文本溢出&quot; class=&quot;headerlink&quot; title=&quot;单行文本溢出&quot;&gt;&lt;/a&gt;单行文
       
     
     </summary>
@@ -98,13 +223,13 @@
     <published>2017-12-22T10:40:16.000Z</published>
     <updated>2019-02-19T11:50:47.521Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;!-- rebuild by neat --&gt;
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat --&gt;
       
     
     </summary>
@@ -123,13 +248,13 @@
     <published>2017-12-22T10:39:11.000Z</published>
     <updated>2019-02-19T11:50:47.499Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;!-- rebuild by neat --&gt;
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat --&gt;
       
     
     </summary>
@@ -142,44 +267,19 @@
   </entry>
   
   <entry>
-    <title>js</title>
-    <link href="https://baixian.github.io/provence.github.io/category/js/"/>
-    <id>https://baixian.github.io/provence.github.io/category/js/</id>
-    <published>2017-12-22T10:38:11.000Z</published>
-    <updated>2019-02-19T11:50:54.483Z</updated>
-    
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><!-- rebuild by neat -->]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;!-- rebuild by neat --&gt;
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://baixian.github.io/provence.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="js" scheme="https://baixian.github.io/provence.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
     <title>hexo建站第一天</title>
     <link href="https://baixian.github.io/provence.github.io/category/hexo%E5%BB%BA%E7%AB%99%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
     <id>https://baixian.github.io/provence.github.io/category/hexo建站第一天/</id>
     <published>2017-12-22T10:36:11.000Z</published>
     <updated>2019-02-17T07:48:26.706Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><p>玩github有几个月了，顺手想搭建一个博客，然后看了Jekyll和hexo ，最终选择了hexo搭建这个博客<br>然后就是翻阅各种资料，期间也有些问题，但最终都逐步解决了</p><h4 id="话不多说"><a href="#话不多说" class="headerlink" title="话不多说"></a>话不多说</h4><p>1.进入官网 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a><br>2.按照官网走下去，应该没有多大问题<br>3.然后就是选择一个主题了 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 我在这里选择的是next主题<br>4.next主题个性化配置 网上一搜一大把 不想搜的话可以看这篇 <a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">https://www.jianshu.com/p/f054333ac9e6</a><br>5.然后就是部署放到github上面</p><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><p>玩github有几个月了，顺手想搭建一个博客，然后看了Jekyll和hexo ，最终选择了hexo搭建这个博客<br>然后就是翻阅各种资料，期间也有些问题，但最终都逐步解决了</p><h4 id="话不多说"><a href="#话不多说" class="headerlink" title="话不多说"></a>话不多说</h4><p>1.进入官网 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a><br>2.按照官网走下去，应该没有多大问题<br>3.然后就是选择一个主题了 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 我在这里选择的是next主题<br>4.next主题个性化配置 网上一搜一大把 不想搜的话可以看这篇 <a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">https://www.jianshu.com/p/f054333ac9e6</a><br>5.然后就是部署放到github上面</p><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;p&gt;玩github有几个月了，顺手想搭建一个博客，然后看了Jekyll和hexo ，最终选择了hexo搭建这个博客&lt;br&gt;然后就是翻阅各种资料，期间也有些
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;玩github有几个月了，顺手想搭建一个博客，然后看了Jekyll和hexo ，最终选择了hexo搭建这个博客&lt;br&gt;然后就是翻阅各种资料，期间
       
     
     </summary>
@@ -198,13 +298,13 @@
     <published>2017-12-22T10:35:11.000Z</published>
     <updated>2019-02-20T06:09:42.111Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Feb 20 2019 16:12:16 GMT+0800 (中国标准时间) --&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/
+        &lt;!-- build time:Thu Feb 21 2019 20:58:18 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hex
       
     
     </summary>

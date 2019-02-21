@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[javascript常用的正则表达式]]></title>
+    <url>%2Fprovence.github.io%2Fcategory%2Fjavascript%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[项目中经常用到的正则表达式在项目中经常会用到JS的正则去验证用户输入的是否规范通常验证规则代码为123var phonereg = /^1[3|4|5|7|8][0-9]&#123;9&#125;$/; //手机正则var vifphone = 15035231452alert(phonereg.test(this.vifphone)); // true邮箱验证正则1/^(\w)+(.\w+)*@(\w)+((.\w&#123;2,3&#125;)&#123;1,3&#125;)$/手机验证正则1/^1[3|4|5|7|8][0-9]&#123;9&#125;$/]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css几个超实用美化页面细节方法]]></title>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss%2F</url>
+    <content type="text"><![CDATA[使用CSS3 ::selection伪元素改变文本选中颜色设置整个页面文本选中的基本样式123456789101112::selection &#123; background:#32acb4; color:#fff;&#125;::-moz-selection &#123; background:#32acb4; color:#fff;&#125;::-webkit-selection &#123; background:#32acb4; color:#fff;&#125;使用CSS选择器修改指定标签内容文字选中后的样式状态12345678910111213&lt;p class="maroon"&gt;...文字内容。&lt;/p&gt;.maroon::selection &#123; background:maroon; color:#fff;&#125;.maroon::-moz-selection &#123; background:maroon; color:#fff;&#125;.maroon::-webkit-selection &#123; background:maroon; color:#fff;&#125;使用CSS3修改浏览器滚动条样式12345678910111213::-webkit-scrollbar &#123; width: 9px; height: 9px; &#125;::-webkit-scrollbar-track-piece &#123; background-color: transparent; &#125;body::-webkit-scrollbar-track-piece &#123; background-color: rgba(0,0,0,.2); &#125;::-webkit-scrollbar-track-piece:no-button &#123;&#125;::-webkit-scrollbar-thumb &#123; background-color: rgba(0,0,0,.6); border-radius: 3px; &#125;::-webkit-scrollbar-thumb:hover &#123; background-color:#454545; &#125;::-webkit-scrollbar-thumb:active &#123; background-color: #323232; &#125;::-webkit-scrollbar-button:vertical &#123; width: 9px; &#125;::-webkit-scrollbar-button:horizontal &#123; width: 9px; &#125;::-webkit-scrollbar-button:vertical:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:vertical:end:increment &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:end:increment &#123; background-color: #cccccc; &#125;]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Webstrom快捷键]]></title>
+    <url>%2Fprovence.github.io%2Fcategory%2FWebstrom%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[由于特别喜欢Webstrom这款编辑器，虽然运行起来有点沉重，没有Sublime那么轻巧，但是萝卜白菜各有所爱。下面就总结一下Webstrom的快捷键ctrl + shift + n: 打开工程中的文件，目的是打开当前工程下任意目录的文件。ctrl + j: 输出模板ctrl + b: 跳到变量申明处ctrl + alt + T: 围绕包裹代码(包括zencoding的Wrap with Abbreviation)ctrl + []: 匹配 {}[]ctrl + F12: 可以显示当前文件的结构ctrl + x: 剪切(删除)行，不选中，直接剪切整个行，如果选中部分内容则剪切选中的内容alt + left/right:标签切换ctrl + r: 替换ctrl + shift + up: 行移动shift + alt + up: 块移动(if(){},while(){}语句块的移动)ctrl + d: 行复制ctrl + shift + ]/[: 选中块代码ctrl + / : 单行注释ctrl + shift + / : 块注释ctrl + shift + i : 显示当前CSS选择器或者JS函数的详细信息ctrl + ‘-/+’: 可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠。ctrl + ‘.’: 折叠选中的代码的代码。shift + esc: 当前激活的任意小窗口最小化，也可以是alt+数字键，数字在小窗口有显示。alt + ‘7’: 显示当前的函数结构。如果是*.html页面，则在文件名下的导航栏某DOM结构上右键，可以全选当前DOM结构。常用快捷键查找/代替快捷键说明ctrl+shift+N通过文件名快速查找工程内的文件（必记）ctrl+shift+alt+N通过一个字符快速查找位置（必记）ctrl+F在文件内快速查找代码F3查找下一个shift+F3查找上一个ctrl+R文件内代码替换ctrl+shift+R指定目录内代码批量替换ctrl+shift+F指定目录内代码批量查找先这样吧到时候在整理]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>实用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git的一些操作]]></title>
+    <url>%2Fprovence.github.io%2Fcategory%2Fgit%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[廖雪峰git教程 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000Pro Git（中文版）https://gitee.com/progit/index.html一些git的常用操作1.修改git所有commit记录中用户的name和email修改本地全局提交用户信息修改提交用户邮箱1git config --global user.email "email@example.com"修改提交用户名1git config --global user.name "yourname"修改完成以后，后面再提交的时候就是用的这个设置好的用户信息了，不过之前的提交记录并不会被修改。修改仓库历史提交用户信息clone一个新的项目文件1.git clone –bare https://github.com/user/projectName.git 克隆完成以后cd projectName 进入项目2.在命令行中运行批量修改脚本12345678910111213141516#!/bin/sh git filter-branch --env-filter ' OLD_EMAIL="your-old-email@example.com" CORRECT_NAME="Your Correct Name" CORRECT_EMAIL="your-correct-email@example.com" if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ] then export GIT_COMMITTER_NAME="$CORRECT_NAME" export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL" fi if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ] then export GIT_AUTHOR_NAME="$CORRECT_NAME" export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL" fi ' --tag-name-filter cat -- --branches --tags3.将上面脚本中的OLD_EMAIL替换为你的旧的提交邮箱，CORRECT_NAME和CORRECT_EMAIL修改为新的用户名和邮箱地址。4.修改完成后复制脚本到命令行中直接按回车Enter键即可批量替换提交信息。5.脚本执行完成后执行git命令git push –force –tags origin ‘refs/heads/*’ 将信息提交到远程仓库即可具体可见官方提供的GitHub Help最后送大家一个git命令行大全图片]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信小程序]]></title>
     <url>%2Fprovence.github.io%2Fcategory%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[微信小程序学习1.因为公司要开发小程序，也没接触过，感谢公司给学习的时间，特此来记录一下 学习微信小程序的坑2.从注册微信小程序账户到安装微信开发者工具，官方文档给的确实算很详细了，就想大神们都说的，中国好多的官方文档可以就算是傻瓜式的了，就差帮你安装了。这一块的话我也是按着官网的提示一步步走的，就放一个官方的地址。https://mp.weixin.qq.com/debug/wxadoc/dev/3.下载安装好微信开发者工具后，新建项目，会生成一个默认的文件夹。如下图所示：默认的已经为我们建立了helloWorld页面，pages对应的是每一个单独的页面，utile放的是一些工具类的文件，app.js放置一些默认的js代码，再往后的开发中可以将一些常用的js功能封装起来放在app.js方便调用。app.json放的是这个微信小程序的配置。app.wxss则是整体的初始化样式。以index文件夹为例，其中的index.wxml，index.wxss，index.js相当于html文件的html、css、js。微信进行了封装，每个文件夹下的文件只对当前页面有作用。整体来说微信小程序的开发类似于html的开发，具备基本的html，css知识就可以进行样式布局的开发。类似于的标签在官方文档里都有详细的介绍，可以一边参考文档一边自己写，能更加快的学会各种标签的使用方法。这里放一个比较简单的首页轮播的小案例，也是这两天自己在学的时候做的，比较粗糙，但大概就是这样一个标签的使用方法：wxml文件123456789&lt;view class="slide"&gt; &lt;swiper class="swiper" indicator-dots="&#123;&#123;indicatorDots&#125;&#125;" autoplay="&#123;&#123;autoplay&#125;&#125;" interval="&#123;&#123;interval&#125;&#125;" duration="&#123;&#123;duration&#125;&#125;"&gt; &lt;block wx:for="&#123;&#123;imgUrls&#125;&#125;" wx:for-index="index" wx:key="id"&gt; &lt;swiper-item&gt; &lt;image src="&#123;&#123;item.image&#125;&#125;" mode="aspectFill" /&gt; &lt;/swiper-item&gt; &lt;/block&gt; &lt;/swiper&gt;&lt;/view&gt;wxss文件123456789101112.slide &#123; width: 100%; height: 380rpx;&#125;.slide .swiper &#123; width: 100%; height: 380rpx;&#125;.slide .swiper image &#123; width: 100%; height: 380rpx;&#125;js文件123456789101112data: &#123;imgUrls: [ &#123; "image": "../../image/banner.png" &#125;, &#123; "image": "../../image/banner2.png" &#125;, &#123; "image": "../../image/banner.png" &#125;, &#123; "image": "../../image/banner2.png" &#125;],//图片链接地址indicatorDots: true, //是否显示焦点autoplay: true, //是否自动播放interval: 2000, //自动播放时间间隔duration: 500 //滑动时间&#125;,]]></content>
+    <content type="text"><![CDATA[微信小程序学习1.因为公司要开发小程序，也没接触过，感谢公司给学习的时间，特此来记录一下 学习微信小程序的坑2.从注册微信小程序账户到安装微信开发者工具，官方文档给的确实算很详细了，就像大神们都说的，中国好多的官方文档可以就算是傻瓜式的了，就差帮你安装了。这一块的话我也是按着官网的提示一步步走的，就放一个官方的地址。https://mp.weixin.qq.com/debug/wxadoc/dev/3.下载安装好微信开发者工具后，新建项目，会生成一个默认的文件夹。如下图所示：默认的已经为我们建立了helloWorld页面，pages对应的是每一个单独的页面，utile放的是一些工具类的文件，app.js放置一些默认的js代码，再往后的开发中可以将一些常用的js功能封装起来放在app.js方便调用。app.json放的是这个微信小程序的配置。app.wxss则是整体的初始化样式。以index文件夹为例，其中的index.wxml，index.wxss，index.js相当于html文件的html、css、js。微信进行了封装，每个文件夹下的文件只对当前页面有作用。整体来说微信小程序的开发类似于html的开发，具备基本的html，css知识就可以进行样式布局的开发。类似于的标签在官方文档里都有详细的介绍，可以一边参考文档一边自己写，能更加快的学会各种标签的使用方法。这里放一个比较简单的首页轮播的小案例，也是这两天自己在学的时候做的，比较粗糙，但大概就是这样一个标签的使用方法：wxml文件123456789&lt;view class="slide"&gt; &lt;swiper class="swiper" indicator-dots="&#123;&#123;indicatorDots&#125;&#125;" autoplay="&#123;&#123;autoplay&#125;&#125;" interval="&#123;&#123;interval&#125;&#125;" duration="&#123;&#123;duration&#125;&#125;"&gt; &lt;block wx:for="&#123;&#123;imgUrls&#125;&#125;" wx:for-index="index" wx:key="id"&gt; &lt;swiper-item&gt; &lt;image src="&#123;&#123;item.image&#125;&#125;" mode="aspectFill" /&gt; &lt;/swiper-item&gt; &lt;/block&gt; &lt;/swiper&gt;&lt;/view&gt;wxss文件123456789101112.slide &#123; width: 100%; height: 380rpx;&#125;.slide .swiper &#123; width: 100%; height: 380rpx;&#125;.slide .swiper image &#123; width: 100%; height: 380rpx;&#125;js文件123456789101112data: &#123;imgUrls: [ &#123; "image": "../../image/banner.png" &#125;, &#123; "image": "../../image/banner2.png" &#125;, &#123; "image": "../../image/banner.png" &#125;, &#123; "image": "../../image/banner2.png" &#125;],//图片链接地址indicatorDots: true, //是否显示焦点autoplay: true, //是否自动播放interval: 2000, //自动播放时间间隔duration: 500 //滑动时间&#125;,]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -23,9 +67,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[css几个超实用美化页面细节方法]]></title>
-    <url>%2Fprovence.github.io%2Fcategory%2Fcss%2F</url>
-    <content type="text"><![CDATA[使用CSS3 ::selection伪元素改变文本选中颜色设置整个页面文本选中的基本样式123456789101112::selection &#123; background:#32acb4; color:#fff;&#125;::-moz-selection &#123; background:#32acb4; color:#fff;&#125;::-webkit-selection &#123; background:#32acb4; color:#fff;&#125;使用CSS选择器修改指定标签内容文字选中后的样式状态12345678910111213&lt;p class="maroon"&gt;...文字内容。&lt;/p&gt;.maroon::selection &#123; background:maroon; color:#fff;&#125;.maroon::-moz-selection &#123; background:maroon; color:#fff;&#125;.maroon::-webkit-selection &#123; background:maroon; color:#fff;&#125;使用CSS3修改浏览器滚动条样式12345678910111213::-webkit-scrollbar &#123; width: 9px; height: 9px; &#125;::-webkit-scrollbar-track-piece &#123; background-color: transparent; &#125;body::-webkit-scrollbar-track-piece &#123; background-color: rgba(0,0,0,.2); &#125;::-webkit-scrollbar-track-piece:no-button &#123;&#125;::-webkit-scrollbar-thumb &#123; background-color: rgba(0,0,0,.6); border-radius: 3px; &#125;::-webkit-scrollbar-thumb:hover &#123; background-color:#454545; &#125;::-webkit-scrollbar-thumb:active &#123; background-color: #323232; &#125;::-webkit-scrollbar-button:vertical &#123; width: 9px; &#125;::-webkit-scrollbar-button:horizontal &#123; width: 9px; &#125;::-webkit-scrollbar-button:vertical:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:vertical:end:increment &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:end:increment &#123; background-color: #cccccc; &#125;]]></content>
+    <title><![CDATA[css3制作鼠标移入的过渡动画效果]]></title>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss3%E5%88%B6%E4%BD%9C%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E7%9A%84%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%2F</url>
+    <content type="text"><![CDATA[在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题代码如下12.inbtnclick&#123;opacity:0&#125;.inbtnclick:hover&#123; opacity: 1;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; &#125;在很多hover的地方，只需要在上个元素上写好hover之前的样式，然后再hover中写入要改变的样式，然后加入这一段代码即可完成。1-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css单行文本，多行文本溢出显示省略号]]></title>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%EF%BC%8C%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[单行文本溢出123white-space: nowrap; overflow: hidden; text-overflow: ellipsis;多行文本溢出只适用用webkit内核浏览器1234display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -53,17 +108,6 @@
       </categories>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[js]]></title>
-    <url>%2Fprovence.github.io%2Fcategory%2Fjs%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>

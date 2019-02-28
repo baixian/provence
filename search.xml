@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[如何成为一名卓越的前端工程师]]></title>
-    <url>%2Fcategory%2F%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E5%8D%93%E8%B6%8A%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2F%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E5%8D%93%E8%B6%8A%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%2F</url>
     <content type="text"><![CDATA[路漫漫其修远兮，吾将上下而求索最近连续做了好几个项目，博客也没有精力慢慢更新了特分享一篇文章，看过之后非常有感触最近我收到一封读者来信让我陷入了思考，信是这么写的：Hi Philip，您是否介意我问您是如何成为一名卓越 (great) 的前端工程师的？对此您有什么建议吗？我不得不承认，我很惊讶被问这样的问题，因为我从来不觉得自己是个很卓越的前端工程师。甚至我入行头几年时并不认为自己可以做好这一行。我只确定自己比自己想象中还才疏学浅，而且大家面试我的时候都不知道从何问起话虽这么说，我到现在做得还算不错，而且成为了团队中有价值的一员。但我最终离开 (去寻求新的挑战——即我还不能够胜任的工作) 的时候，我经常会被要求招聘我的继任者。现在回看这些面试，我不禁感叹当我刚开始的时候自己在这方面的知识是多么的匮乏。我现在或许不会按照我自己的模型进行招聘，即便我个人的这种经历也有可能成功。我在 web 领域工作越长时间，我就越意识到区分人才和顶尖人才的并不是他们的知识——而是他们思考问题的方式。很显然，知识在很多情况下是非常重要而且关键的——但是在一个快速发展的领域，你前进和获取知识的方式 (至少在相当长的一段时间里) 会比你已经掌握的知识显得更加重要。更重要的是：你是如何运用这些知识解决每天的问题的。这里有许许多多的文章谈论你工作中需要的语言、框架、工具等等。我希望给一些不一样的建议。在这篇文章里，我想谈一谈一个前端工程师的心态，希望可以帮助大家找到通往卓越的道路。别光解决问题，想想究竟发生是什么很多人埋头写 CSS 和 JavaScript 直到程序工作起来了，然后就去做别的事情了。我通过 code review 发现这种事经常发生。我总会问大家：“为什么你会在这里添加 float: left？”或者“这里的 overflow: hidden 是必要的吗？”，他们往往答道：“我也不知道，可是我一删掉它们，页面就乱套了。”JavaScript 也是一样，我总会在一个条件竞争的地方看到一个 setTimeout，或者有些人无意中阻止了事件传播，却不知道它会影响到页面中其它的事件处理。我发现很多情况下，当你遇到问题的时候，你只是解决当下的问题罢了。但是如果你永远不花时间理解问题的本源，你将一次又一次的面对相同的问题。花一些时间找出为什么，这看上去费时费力，但是我保证它会节省你未来的时间。在完全理解整个系统之后，你就不需要总去猜测和论证了。学会预见未来的浏览器发展趋势前后端开发的一个主要区别在于后端代码通常都运行在完全由你掌控的环境下。前端相对来说不那么在你的掌控之中。不同用户的平台或设备是前端永恒的话题，你的代码需要优雅掌控这一切。我记得自己 2011 年之前曾经阅读某主流 JavaScript 框架的时候看到过下面这样的代码 (简化过的)：var isIE6 = !isIE7 &amp;&amp; !isIE8 &amp;&amp; !isIE9;在这个例子中变量 IE6 为了判断 IE 浏览器版本是否是 6 或更低的版本。那么在 IE10 发布时，我们的程序判断还是会出问题。我理解在真实世界特性检测并不 100% 工作，而且有的时候你不得不依赖有 bug 的特性或根据浏览器特性检测的错误设计白名单。但你为此做的每一件事都非常关键，因为你预见到了不再有 bug 的未来。对于我们当中的很多人来说，我们今天写的代码都会比我们的工作周期要长。有些我写的代码已经过去 8 年多了还在产品线上运行。这让人很满足又很不安。阅读规范文档浏览器有 bug 是很难免的事，但是当同一份代码在两个浏览器渲染出来的效果不一样，人们总会不假思索的推测，那个“广受好评”的浏览器是对的，而“不起眼”的浏览器是错的。但事实并不一定如此，当你的假设出现错误时，你选取的变通办法都会在未来遭遇问题。一个就近的例子是 flex 元素的默认最小尺寸问题。根据规范的描述，flex 元素初始化的 min-width 和 min-height 的值是 auto (而不是 0)，也就是说它们默认应该收缩到自己内容的最小尺寸。但是在过去长达 8 个月的时间里，只有 Firefox 的实现是准确的。[1]如果你遇到了这个浏览器兼容性的问题并且发现 Chrome、IE、Opera、Safari 的效果相同而 Firefox 和它们不同时，你很可能会认为是 Firefox 搞错了。事实上这种情况我见多了。很多我在自己 Flexbugs 项目上报的问题都是这样的。而且这些解决方案的问题会在两周之后 Chrome 44 修复之后被体现出来。和遵循标准的解决方案相比，这些方案都伤害到了正确的规范行为。[2]当同一份代码在两个或更多浏览器的渲染结果不同时，你应该花些时间确定哪个效果是正确的，并且以此为标准写代码。你的解决方案应该是对未来友好的。额外的，所谓“卓越”的前端工程师是时刻感受变化，在某项技术成为主流之前就去适应它的，甚至在为这样的技术做着贡献。如果你锻炼自己看到规范就能在浏览器支持它之前想象出它如何工作的，那么你将成为谈论并影响其规范开发的那群人。阅读别人的代码出于乐趣阅读别人的代码可能并不是你每周六晚上会想到的娱乐项目，但是这毫无疑问是你成为优秀工程师的最佳途径。自己独立解决问题绝对是个不错的方式，但是这不应该是你唯一的方式，因为它很快就会让你稳定在某个层次。阅读别人的代码会让你开阔思维，并且阅读和理解别人写的代码也是团队协作或开源贡献必须具备的能力。我着实认为很多公司在招聘新员工的时候犯的最大错误是他们只评估应聘者从轮廓开始写新代码的能力。我几乎没有见过一场面试会要求应聘者阅读现有的代码，找出其中的问题，并修复它们。缺少这样的面试流程真的非常不好，因为你作为工程师的很多时间都花费在了在现有的代码的基础上增加或改变上门，而不是搭建新的东西。与比你聪明的人一起工作我印象中的很多前端开发者 (相比于全职工作来说) 都是自由职业者，有同类想法的后端开发者并没有那么多。可能是因为很多前端都是自学成才的而后端则多是学校里学出来的。不论是自我学习还是自我工作，我们都面对一个问题：你并没有机会从比你聪明的家伙那里学到什么。没有人帮你 review 代码，也没有人与你碰撞灵感。我强烈建议，最起码在你职业发展的前期，你要在一个团队里工作，尤其是一个普遍比你聪明而且有经验的团队里工作。如果你最终会在你职业发展的某个阶段选择独立工作，一定要让自己投身在开源社区当中。保持对开源项目的活跃贡献，这会给你团队工作相同甚至更多的益处。“造轮子”造轮子在商业上是非常糟糕的，但是从学习的角度是非常好的。你可能很想把那些库和小工具直接从 npm 里拿下来用，但也可以想象一下你独立建造它们能够学到多少东西。我知道有些人读到这里是特别不赞成的。别误会，我并没有说你不应该使用第三方代码。那些经过充分测试的库具有多年的测试用例积累和已知问题积累，使用它们绝对是非常明智的选择。但在这里我想说的是如何从优秀到卓越。我觉得这个领域很多卓越的人都是我每天在用的非常流行的库的作者或维护者。你可能不曾打造过自己的 JavaScript 库也拥有一个成功的职业发展，但是你从不把自己手弄脏是几乎不可能淘到金子的。在这一行大家普遍会问的一个问题是：我接下来应该做点什么？如果你没有试着学一个新的工具创建一个新的应用，那不妨试着重新造一个你喜欢的 JavaScript 库或 CSS 框架。这样做的一个好消息是，在你遇到困难的时候，所有现成的库的源代码都会为你提供帮助。把你学到的东西都记录下来最后，但丝毫不逊色的是，你应该把你学到的东西记录下来。这样做有很多原因，但也许最重要的原因是它强迫你更好的理解这件事。如果你无法讲清楚它的工作原理，在整个过程中它会推动你自己把并不真正理解的东西弄清楚。很多情况下你根本意识不到自己还不理解它们——直到自己动手写的时候。根据我的经验，写作、演讲、做 demo 是强迫自己完全深入理解一件事的最佳方式。就算你写的东西没有人看，整个过程也会让你受益匪浅。来自 Philip Walton 的博客]]></content>
       <categories>
         <category>杂谈</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[html 中video的一些奇淫技巧]]></title>
-    <url>%2Fcategory%2Fhtml2%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhtml2%2F</url>
     <content type="text"><![CDATA[好记性不如烂笔头最近又一个移动端项目播放视频还是在微信端，众所周知。微信的x5内核浏览器那是一个尿性需求是视频需要在页面自动播放，但是用原生的video标签 都会弹出来，没办法只好用插件了video.js 是一个老外写的，英文看不懂，但是可以看中文文档啊这里推荐一篇videojs中文文档详解1.首先去官网下载video.js文件,然后引入引入video.js和video-js.css12&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video-js.min.css" rel="stylesheet"&gt;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video.min.js"&gt;&lt;/script&gt;2.使用video标签就像下面这样：123&lt;video x-webkit-airplay="allow" x5-playsinline="true" webkit-playsinline="true" playsinline="true" id="my-video" preload="auto" class="video-js vjs-big-play-centered" poster="&#123;$activity.video_poster|cmf_get_asset_url&#125;"&gt; &lt;source src="&#123;$activity.video_url|cmf_get_asset_url&#125;" type="video/mp4"&gt;&lt;/video&gt;因为需要基于微信端播放，而微信的浏览器又是x5浏览器内核，3.videojs使用方式就是以类似的方式开始的，不过由于我们借助videojs对视频进行一些控制或制定1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950window.onload=function () &#123; var player = videojs('my-video',&#123; muted: false, controls : true, height:400, width:600, loop : true, autoplay:true, preload:true, fluid:true, controlBar: &#123; volumeBar: false, playToggle: false, currentTimeDisplay: false, timeDivider: false, fullscreenToggle: false, progressControl:false, children: [ &#123; name: 'playToggle' &#125;, &#123; name: 'progressControl' &#125;, &#123; name: 'currentTimeDisplay' &#125;, &#123; name: 'timeDivider', &#125;, &#123; name: 'durationDisplay', &#125;, &#123; name: 'volumePanel', inline: false, &#125;, &#123; name: 'fullscreenToggle' &#125;, ] &#125; &#125;); document.addEventListener("WeixinJSBridgeReady", function() &#123; var video = document.getElementById('my-video'); video.play(); &#125;, false); video.play(); &#125;这是我在项目的配置，具体的可见这篇中文文档video.js，根据需求配置]]></content>
       <categories>
         <category>技术</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[html 中audio的一些奇淫技巧]]></title>
-    <url>%2Fcategory%2Fhtml1%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhtml1%2F</url>
     <content type="text"><![CDATA[因最近移动端项目要用到音频播放，特此把一些坑记下来为了往后不再踩坑1.音频自动播放问题；这是我在PC端的谷歌模拟器下调试成功后，移动端调试遇到的第一个问题。PC端耍的好好的，到手机上突然没了声音，这尼玛好蛋疼，好想骂娘，突然感觉到人生好艰难~但是再难也要走下去，平复心情，解决问题在网上查了资料后，这个问题最终解决了关于音频自动播放属性autoplay的问题，目前分为两种支持audio的autoplay，大部分安卓手机的自带浏览器和微信（无需特殊处理）；不支持audio的autoplay，部分的IOS手机的微信；因为项目基于微信端 然后因为微信的一个jssdk文件https://res.wx.qq.com/open/js/jweixin-1.2.0.js代码如下1&lt;audio id="music" autoplay='autoplay' loop="loop"&gt;你的浏览器不支持audio标签。&lt;/audio&gt;这里只列举ios自动播放的方法1234567891011121314function autoPlayAudio2() &#123; window.onload = function() &#123; // alert(typeof WeixinJSBridge); // WeixinJSBridge.invoke('getNetworkType', &#123;&#125;, function(e) &#123; // // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型 // alert(e.err_msg); // document.getElementById('music').play(); // &#125;); document.addEventListener("WeixinJSBridgeReady", function () &#123; document.getElementById('music').play(); &#125;, false); &#125;; &#125; autoPlayAudio2();未完待续]]></content>
       <categories>
         <category>技术</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[利用css3伪类修改input[type=radio]样式]]></title>
-    <url>%2Fcategory%2Fcss1%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss1%2F</url>
     <content type="text"><![CDATA[利用css3伪类修改input[type=radio]样式例子1Html代码如下1&lt;input type="radio" name="radio"/&gt;Css代码如下12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152input[type=radio],input[type=checkbox]&#123; display: inline-block; width: 20px; height: 20px; margin-left: 5px; -webkit-appearance: none; -moz-appearance: none; background-color: transparent; border: 0; outline: 0; line-height: 20px; color: #d8d8d8;&#125;input[type=radio]:after&#123; content: ""; display:block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 22px; font-size: 18px; color: #fff; border: 2px solid #d1d1d1; background-color: #fff; box-sizing:border-box;&#125;input[type=checkbox]:after&#123; content: ""; display:block; width: 20px; height: 20px; text-align: center; line-height: 14px; font-size: 16px; color: #fff; border: 2px solid #d1d1d1; background-color: #fff; box-sizing:border-box;&#125;input[type=checkbox]:checked:after&#123; border: 4px solid #ddd; background-color: #f74747;&#125;input[type=radio]:checked:after&#123; content: "L"; transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0); -moz-transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0); -webkit-transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0); border-color: #f74747; background-color: #f74747;&#125;例子2Html代码如下1&lt;input type="checkbox"/&gt;Css代码如下123456789101112131415161718192021222324252627282930313233343536373839404142434445 input[type=checkbox]&#123; width: 20px; height: 20px; background-color: #ffffff; border: solid 1px #dddddd; -webkit-border-radius: 3px; border-radius: 3px; font-size: 0.8rem; margin: 0; padding: 0; position: relative; display: inline-block; vertical-align: top; cursor: default; -webkit-appearance: none; -webkit-user-select: none; user-select: none; -webkit-transition: background-color ease 0.1s; transition: background-color ease 0.1s; &#125; input[type=checkbox]:checked:before, input[type=checkbox]:checked:after&#123; content: ''; width: 1rem; height: .6rem; position: absolute; top: 50%; left: 50%; margin-left: -.5rem; margin-top: -.5rem; background: transparent; border: 1px solid #ffffff; border-top: none; border-right: none; z-index: 2; -webkit-border-radius: 0; border-radius: 0; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); &#125;input[type=checkbox]:checked&#123; background-color: #20D1A7; border: solid 1px #20D1A7; text-align: center; background-clip: padding-box; &#125;]]></content>
       <categories>
         <category>技术</category>
@@ -46,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[javascript常用的正则表达式]]></title>
-    <url>%2Fcategory%2Fjavascript%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fjavascript%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[项目中经常用到的正则表达式在项目中经常会用到JS的正则去验证用户输入的是否规范通常验证规则代码为123var phonereg = /^1[3|4|5|7|8][0-9]&#123;9&#125;$/; //手机正则var vifphone = 15035231452alert(phonereg.test(this.vifphone)); // true邮箱验证正则1/^(\w)+(.\w+)*@(\w)+((.\w&#123;2,3&#125;)&#123;1,3&#125;)$/手机验证正则1/^1[3|4|5|7|8][0-9]&#123;9&#125;$/]]></content>
       <categories>
         <category>技术</category>
@@ -57,7 +57,7 @@
   </entry>
   <entry>
     <title><![CDATA[css几个超实用美化页面细节方法]]></title>
-    <url>%2Fcategory%2Fcss%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss%2F</url>
     <content type="text"><![CDATA[使用CSS3 ::selection伪元素改变文本选中颜色设置整个页面文本选中的基本样式123456789101112::selection &#123; background:#32acb4; color:#fff;&#125;::-moz-selection &#123; background:#32acb4; color:#fff;&#125;::-webkit-selection &#123; background:#32acb4; color:#fff;&#125;使用CSS选择器修改指定标签内容文字选中后的样式状态12345678910111213&lt;p class="maroon"&gt;...文字内容。&lt;/p&gt;.maroon::selection &#123; background:maroon; color:#fff;&#125;.maroon::-moz-selection &#123; background:maroon; color:#fff;&#125;.maroon::-webkit-selection &#123; background:maroon; color:#fff;&#125;使用CSS3修改浏览器滚动条样式12345678910111213::-webkit-scrollbar &#123; width: 9px; height: 9px; &#125;::-webkit-scrollbar-track-piece &#123; background-color: transparent; &#125;body::-webkit-scrollbar-track-piece &#123; background-color: rgba(0,0,0,.2); &#125;::-webkit-scrollbar-track-piece:no-button &#123;&#125;::-webkit-scrollbar-thumb &#123; background-color: rgba(0,0,0,.6); border-radius: 3px; &#125;::-webkit-scrollbar-thumb:hover &#123; background-color:#454545; &#125;::-webkit-scrollbar-thumb:active &#123; background-color: #323232; &#125;::-webkit-scrollbar-button:vertical &#123; width: 9px; &#125;::-webkit-scrollbar-button:horizontal &#123; width: 9px; &#125;::-webkit-scrollbar-button:vertical:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:vertical:end:increment &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:start:decrement &#123; background-color: #cccccc; &#125;::-webkit-scrollbar-button:horizontal:end:increment &#123; background-color: #cccccc; &#125;]]></content>
       <categories>
         <category>技术</category>
@@ -68,7 +68,7 @@
   </entry>
   <entry>
     <title><![CDATA[Webstrom快捷键]]></title>
-    <url>%2Fcategory%2FWebstrom%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2FWebstrom%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[由于特别喜欢Webstrom这款编辑器，虽然运行起来有点沉重，没有Sublime那么轻巧，但是萝卜白菜各有所爱。下面就总结一下Webstrom的快捷键ctrl + shift + n: 打开工程中的文件，目的是打开当前工程下任意目录的文件。ctrl + j: 输出模板ctrl + b: 跳到变量申明处ctrl + alt + T: 围绕包裹代码(包括zencoding的Wrap with Abbreviation)ctrl + []: 匹配 {}[]ctrl + F12: 可以显示当前文件的结构ctrl + x: 剪切(删除)行，不选中，直接剪切整个行，如果选中部分内容则剪切选中的内容alt + left/right:标签切换ctrl + r: 替换ctrl + shift + up: 行移动shift + alt + up: 块移动(if(){},while(){}语句块的移动)ctrl + d: 行复制ctrl + shift + ]/[: 选中块代码ctrl + / : 单行注释ctrl + shift + / : 块注释ctrl + shift + i : 显示当前CSS选择器或者JS函数的详细信息ctrl + ‘-/+’: 可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠。ctrl + ‘.’: 折叠选中的代码的代码。shift + esc: 当前激活的任意小窗口最小化，也可以是alt+数字键，数字在小窗口有显示。alt + ‘7’: 显示当前的函数结构。如果是*.html页面，则在文件名下的导航栏某DOM结构上右键，可以全选当前DOM结构。常用快捷键查找/代替快捷键说明ctrl+shift+N通过文件名快速查找工程内的文件（必记）ctrl+shift+alt+N通过一个字符快速查找位置（必记）ctrl+F在文件内快速查找代码F3查找下一个shift+F3查找上一个ctrl+R文件内代码替换ctrl+shift+R指定目录内代码批量替换ctrl+shift+F指定目录内代码批量查找先这样吧到时候在整理]]></content>
       <categories>
         <category>工具</category>
@@ -79,7 +79,7 @@
   </entry>
   <entry>
     <title><![CDATA[git的一些操作]]></title>
-    <url>%2Fcategory%2Fgit%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fgit%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[廖雪峰git教程 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000Pro Git（中文版）https://gitee.com/progit/index.html一些git的常用操作1.修改git所有commit记录中用户的name和email修改本地全局提交用户信息修改提交用户邮箱1git config --global user.email "email@example.com"修改提交用户名1git config --global user.name "yourname"修改完成以后，后面再提交的时候就是用的这个设置好的用户信息了，不过之前的提交记录并不会被修改。修改仓库历史提交用户信息clone一个新的项目文件1.git clone –bare https://github.com/user/projectName.git 克隆完成以后cd projectName 进入项目2.在命令行中运行批量修改脚本12345678910111213141516#!/bin/sh git filter-branch --env-filter ' OLD_EMAIL="your-old-email@example.com" CORRECT_NAME="Your Correct Name" CORRECT_EMAIL="your-correct-email@example.com" if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ] then export GIT_COMMITTER_NAME="$CORRECT_NAME" export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL" fi if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ] then export GIT_AUTHOR_NAME="$CORRECT_NAME" export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL" fi ' --tag-name-filter cat -- --branches --tags3.将上面脚本中的OLD_EMAIL替换为你的旧的提交邮箱，CORRECT_NAME和CORRECT_EMAIL修改为新的用户名和邮箱地址。4.修改完成后复制脚本到命令行中直接按回车Enter键即可批量替换提交信息。5.脚本执行完成后执行git命令git push –force –tags origin ‘refs/heads/*’ 将信息提交到远程仓库即可具体可见官方提供的GitHub Help最后送大家一个git命令行大全图片]]></content>
       <categories>
         <category>工具</category>
@@ -90,7 +90,7 @@
   </entry>
   <entry>
     <title><![CDATA[微信小程序]]></title>
-    <url>%2Fcategory%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[微信小程序学习1.因为公司要开发小程序，也没接触过，感谢公司给学习的时间，特此来记录一下 学习微信小程序的坑2.从注册微信小程序账户到安装微信开发者工具，官方文档给的确实算很详细了，就像大神们都说的，中国好多的官方文档可以就算是傻瓜式的了，就差帮你安装了。这一块的话我也是按着官网的提示一步步走的，就放一个官方的地址。https://mp.weixin.qq.com/debug/wxadoc/dev/3.下载安装好微信开发者工具后，新建项目，会生成一个默认的文件夹。如下图所示：默认的已经为我们建立了helloWorld页面，pages对应的是每一个单独的页面，utile放的是一些工具类的文件，app.js放置一些默认的js代码，再往后的开发中可以将一些常用的js功能封装起来放在app.js方便调用。app.json放的是这个微信小程序的配置。app.wxss则是整体的初始化样式。以index文件夹为例，其中的index.wxml，index.wxss，index.js相当于html文件的html、css、js。微信进行了封装，每个文件夹下的文件只对当前页面有作用。整体来说微信小程序的开发类似于html的开发，具备基本的html，css知识就可以进行样式布局的开发。类似于的标签在官方文档里都有详细的介绍，可以一边参考文档一边自己写，能更加快的学会各种标签的使用方法。这里放一个比较简单的首页轮播的小案例，也是这两天自己在学的时候做的，比较粗糙，但大概就是这样一个标签的使用方法：wxml文件123456789&lt;view class="slide"&gt; &lt;swiper class="swiper" indicator-dots="&#123;&#123;indicatorDots&#125;&#125;" autoplay="&#123;&#123;autoplay&#125;&#125;" interval="&#123;&#123;interval&#125;&#125;" duration="&#123;&#123;duration&#125;&#125;"&gt; &lt;block wx:for="&#123;&#123;imgUrls&#125;&#125;" wx:for-index="index" wx:key="id"&gt; &lt;swiper-item&gt; &lt;image src="&#123;&#123;item.image&#125;&#125;" mode="aspectFill" /&gt; &lt;/swiper-item&gt; &lt;/block&gt; &lt;/swiper&gt;&lt;/view&gt;wxss文件123456789101112.slide &#123; width: 100%; height: 380rpx;&#125;.slide .swiper &#123; width: 100%; height: 380rpx;&#125;.slide .swiper image &#123; width: 100%; height: 380rpx;&#125;js文件123456789101112data: &#123;imgUrls: [ &#123; "image": "../../image/banner.png" &#125;, &#123; "image": "../../image/banner2.png" &#125;, &#123; "image": "../../image/banner.png" &#125;, &#123; "image": "../../image/banner2.png" &#125;],//图片链接地址indicatorDots: true, //是否显示焦点autoplay: true, //是否自动播放interval: 2000, //自动播放时间间隔duration: 500 //滑动时间&#125;,]]></content>
       <categories>
         <category>笔记</category>
@@ -101,7 +101,7 @@
   </entry>
   <entry>
     <title><![CDATA[TinyPNG---一个压缩图片的神站，前端必备]]></title>
-    <url>%2Fcategory%2Fhtml%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhtml%2F</url>
     <content type="text"><![CDATA[如何把网页中要用到的图片压缩到最小，这是前端攻城师们在写网页时都会考虑的一个问题，—TinyPNG可以完美压缩图片。只需要简单的两步就可以把你要压缩的PNG格式图片压缩到小很多又基本上不会影响图片的质量：1.打开网址：http://tinypng.org2.选择你要压缩的PNG或者JPG图片或者直接将你要压缩的图片拖拽到网页中间的大框框内。3.压缩完成，点击download下载即可。图片的压缩比例还是非常大的，而且也不会看出与压缩前有多少区别 前端攻城师和设计师们再也不用担心图片太大加载过慢的问题了~]]></content>
       <categories>
         <category>技术</category>
@@ -112,7 +112,7 @@
   </entry>
   <entry>
     <title><![CDATA[css3制作鼠标移入的过渡动画效果]]></title>
-    <url>%2Fcategory%2Fcss3%E5%88%B6%E4%BD%9C%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E7%9A%84%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss3%E5%88%B6%E4%BD%9C%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E7%9A%84%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%2F</url>
     <content type="text"><![CDATA[在很多时候我们需要为页面中的元素制作一些hover效果。有时候需要做成动画过渡，此时css3的动画效果可以很简单的解决这一问题代码如下12.inbtnclick&#123;opacity:0&#125;.inbtnclick:hover&#123; opacity: 1;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; &#125;在很多hover的地方，只需要在上个元素上写好hover之前的样式，然后再hover中写入要改变的样式，然后加入这一段代码即可完成。1-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;]]></content>
       <categories>
         <category>技术</category>
@@ -123,7 +123,7 @@
   </entry>
   <entry>
     <title><![CDATA[css单行文本，多行文本溢出显示省略号]]></title>
-    <url>%2Fcategory%2Fcss%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%EF%BC%8C%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fcss%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%EF%BC%8C%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7%2F</url>
     <content type="text"><![CDATA[单行文本溢出123white-space: nowrap; overflow: hidden; text-overflow: ellipsis;多行文本溢出只适用用webkit内核浏览器1234display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;]]></content>
       <categories>
         <category>技术</category>
@@ -134,7 +134,7 @@
   </entry>
   <entry>
     <title><![CDATA[node]]></title>
-    <url>%2Fcategory%2Fnode%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fnode%2F</url>
     <content type="text"><![CDATA[]]></content>
       <categories>
         <category>技术</category>
@@ -145,7 +145,7 @@
   </entry>
   <entry>
     <title><![CDATA[vue]]></title>
-    <url>%2Fcategory%2Fvue%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fvue%2F</url>
     <content type="text"><![CDATA[]]></content>
       <categories>
         <category>技术</category>
@@ -156,7 +156,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo建站第一天]]></title>
-    <url>%2Fcategory%2Fhexo%E5%BB%BA%E7%AB%99%E7%AC%AC%E4%B8%80%E5%A4%A9%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhexo%E5%BB%BA%E7%AB%99%E7%AC%AC%E4%B8%80%E5%A4%A9%2F</url>
     <content type="text"><![CDATA[玩github有几个月了，顺手想搭建一个博客，然后看了Jekyll和hexo ，最终选择了hexo搭建这个博客然后就是翻阅各种资料，期间也有些问题，但最终都逐步解决了话不多说1.进入官网 https://hexo.io/zh-cn/docs/2.按照官网走下去，应该没有多大问题3.然后就是选择一个主题了 https://hexo.io/themes/ 我在这里选择的是next主题4.next主题个性化配置 网上一搜一大把 不想搜的话可以看这篇 https://www.jianshu.com/p/f054333ac9e65.然后就是部署放到github上面]]></content>
       <categories>
         <category>杂谈</category>
@@ -167,7 +167,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2Fcategory%2Fhello-world%2F</url>
+    <url>%2Fprovence.github.io%2Fcategory%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.Quick StartCreate a new post1$ hexo new "My New Post"More info: WritingRun server1$ hexo serverMore info: ServerGenerate static files1$ hexo generateMore info: GeneratingDeploy to remote sites1$ hexo deployMore info: Deployment]]></content>
   </entry>
 </search>
